@@ -1,13 +1,13 @@
-# Gemini Fullstack LangGraph Quickstart
+# Gemini Fullstack GoGraph Quickstart
 
-This project demonstrates a fullstack application using a React frontend and a LangGraph-powered backend agent. The agent is designed to perform comprehensive research on a user's query by dynamically generating search terms, querying the web using Google Search, reflecting on the results to identify knowledge gaps, and iteratively refining its search until it can provide a well-supported answer with citations. This application serves as an example of building research-augmented conversational AI using LangGraph and Google's Gemini models.
+This project demonstrates a fullstack application using a React frontend and a GoGraph-powered backend agent. The agent is designed to perform comprehensive research on a user's query by dynamically generating search terms, querying the web using Google Search, reflecting on the results to identify knowledge gaps, and iteratively refining its search until it can provide a well-supported answer with citations. This application serves as an example of building research-augmented conversational AI using GoGraph and Google's Gemini models.
 
-![Gemini Fullstack LangGraph](./app.png)
+![Gemini Fullstack GoGraph](./app.png)
 
 ## Features
 
-- 💬 Fullstack application with a React frontend and LangGraph backend.
-- 🧠 Powered by a LangGraph agent for advanced research and conversational AI.
+- 💬 Fullstack application with a React frontend and Go, GoGraph backend.
+- 🧠 Powered by a GoGraph agent for advanced research and conversational AI.
 - 🔍 Dynamic search query generation using Google Gemini models.
 - 🌐 Integrated web research via Google Search API.
 - 🤔 Reflective reasoning to identify knowledge gaps and refine searches.
@@ -19,7 +19,7 @@ This project demonstrates a fullstack application using a React frontend and a L
 The project is divided into two main directories:
 
 -   `frontend/`: Contains the React application built with Vite.
--   `backend/`: Contains the LangGraph/FastAPI application, including the research agent logic.
+-   `backend/`: Contains the GoGraph/FastAPI application, including the research agent logic.
 
 ## Getting Started: Development and Local Testing
 
@@ -28,7 +28,7 @@ Follow these steps to get the application running locally for development and te
 **1. Prerequisites:**
 
 -   Node.js and npm (or yarn/pnpm)
--   Python 3.8+
+-   Golang 1.24+
 -   **`GEMINI_API_KEY`**: The backend agent requires a Google Gemini API key.
     1.  Navigate to the `backend/` directory.
     2.  Create a file named `.env` by copying the `backend/.env.example` file.
@@ -40,7 +40,8 @@ Follow these steps to get the application running locally for development and te
 
 ```bash
 cd backend
-pip install .
+go mod download
+go mod tidy
 ```
 
 **Frontend:**
@@ -59,11 +60,11 @@ make dev
 ```
 This will run the backend and frontend development servers.    Open your browser and navigate to the frontend development server URL (e.g., `http://localhost:5173/app`).
 
-_Alternatively, you can run the backend and frontend development servers separately. For the backend, open a terminal in the `backend/` directory and run `langgraph dev`. The backend API will be available at `http://127.0.0.1:2024`. It will also open a browser window to the LangGraph UI. For the frontend, open a terminal in the `frontend/` directory and run `npm run dev`. The frontend will be available at `http://localhost:5173`._
+_Alternatively, you can run the backend and frontend development servers separately. For the backend, open a terminal in the `backend/` directory and run `langgraph dev`. The backend API will be available at `http://127.0.0.1:2024`. It will also open a browser window to the GoGraph UI. For the frontend, open a terminal in the `frontend/` directory and run `npm run dev`. The frontend will be available at `http://localhost:5173`._
 
 ## How the Backend Agent Works (High-Level)
 
-The core of the backend is a LangGraph agent defined in `backend/src/agent/graph.py`. It follows these steps:
+The core of the backend is a GoGraph custom agent defined in `backend/agent/graph.go`. It follows these steps:
 
 ![Agent Flow](./agent.png)
 
@@ -75,7 +76,7 @@ The core of the backend is a LangGraph agent defined in `backend/src/agent/graph
 
 ## Deployment
 
-In production, the backend server serves the optimized static frontend build. LangGraph requires a Redis instance and a Postgres database. Redis is used as a pub-sub broker to enable streaming real time output from background runs. Postgres is used to store assistants, threads, runs, persist thread state and long term memory, and to manage the state of the background task queue with 'exactly once' semantics. For more details on how to deploy the backend server, take a look at the [LangGraph Documentation](https://langchain-ai.github.io/langgraph/concepts/deployment_options/). Below is an example of how to build a Docker image that includes the optimized frontend build and the backend server and run it via `docker-compose`.
+In production, the backend server serves the optimized static frontend build. GoGraph requires a Redis instance and a Postgres database. Redis is used as a pub-sub broker to enable streaming real time output from background runs. Postgres is used to store assistants, threads, runs, persist thread state and long term memory, and to manage the state of the background task queue with 'exactly once' semantics. For more details on how to deploy the backend server, take a look at the [GoGraph Documentation](https://langchain-ai.github.io/langgraph/concepts/deployment_options/). Below is an example of how to build a Docker image that includes the optimized frontend build and the backend server and run it via `docker-compose`.
 
 _Note: For the docker-compose.yml example you need a LangSmith API key, you can get one from [LangSmith](https://smith.langchain.com/settings)._
 
@@ -100,7 +101,7 @@ Open your browser and navigate to `http://localhost:8123/app/` to see the applic
 - [React](https://reactjs.org/) (with [Vite](https://vitejs.dev/)) - For the frontend user interface.
 - [Tailwind CSS](https://tailwindcss.com/) - For styling.
 - [Shadcn UI](https://ui.shadcn.com/) - For components.
-- [LangGraph](https://github.com/langchain-ai/langgraph) - For building the backend research agent.
+- [GoGraph](https://github.com/langchain-ai/langgraph) - For building the backend research agent.
 - [Google Gemini](https://ai.google.dev/models/gemini) - LLM for query generation, reflection, and answer synthesis.
 
 ## License
