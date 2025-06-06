@@ -55,7 +55,7 @@ func (s *Server) SetupFrontend(buildDir string) {
 
 func (s *Server) Start(port string) error {
 	if port == "" {
-		port = "8080"
+		port = "8123"
 	}
 	addr := fmt.Sprintf(":%s", port)
 	log.Printf("Server starting on %s", addr)
