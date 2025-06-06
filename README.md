@@ -1,5 +1,11 @@
 # Gemini Fullstack GoGraph Quickstart
 
+📝 Note:
+⚠️ We're currently limited by the fact that langgraph-sdk only supports Python and Node.js.
+🚫 This means features/endpoints like /threads and /run/streams are not available in Go.
+🛠️ As a result, we need to implement the langgraph-sdk functionality in Golang from scratch. Once this is done, the project will start working.
+
+
 This project demonstrates a fullstack application using a React frontend and a GoGraph-powered backend agent. The agent is designed to perform comprehensive research on a user's query by dynamically generating search terms, querying the web using Google Search, reflecting on the results to identify knowledge gaps, and iteratively refining its search until it can provide a well-supported answer with citations. This application serves as an example of building research-augmented conversational AI using GoGraph and Google's Gemini models.
 
 ![Gemini Fullstack GoGraph](./app.png)
