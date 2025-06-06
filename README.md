@@ -19,7 +19,7 @@ This project demonstrates a fullstack application using a React frontend and a G
 The project is divided into two main directories:
 
 -   `frontend/`: Contains the React application built with Vite.
--   `backend/`: Contains the GoGraph/FastAPI application, including the research agent logic.
+-   `backend/`: Contains the GoGraph/Gin golang application, including the research agent logic.
 
 ## Getting Started: Development and Local Testing
 
